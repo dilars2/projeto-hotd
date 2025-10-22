@@ -1,6 +1,7 @@
 const botoesCarrossel = document.querySelectorAll(".botao");
 const imagens = document.querySelectorAll(".imagem");
 const informacoes = document.querySelectorAll(".informacoes");
+
 botoesCarrossel.forEach((botao, indice) => {
     botao.addEventListener("click", () => {
         desativarBotaoSelecionado();
@@ -11,6 +12,7 @@ botoesCarrossel.forEach((botao, indice) => {
         mostrarInformacoes(indice);
     });
 });
+
 function marcarBotaoSelecionado(botao) {
     botao.classList.add("selecionado");
 }
@@ -21,7 +23,7 @@ function mostrarInformacoes(indice) {
 
 function esconderInformacoesAtivas() {
     const informacoesAtiva = document.querySelector(".informacoes.ativa");
-    informacoesAtiva.classList.remove("ativa");
+    if (informacoesAtiva) informacoesAtiva.classList.remove("ativa");
 }
 
 function mostrarImagemDeFundo(indice) {
@@ -29,11 +31,12 @@ function mostrarImagemDeFundo(indice) {
 }
 
 function esconderImagemAtiva() {
-    const imagemAtiva = document.querySelector(".ativa");
-    imagemAtiva.classList.remove("ativa");
+    const imagemAtiva = document.querySelector(".imagem.ativa");
+    if (imagemAtiva) imagemAtiva.classList.remove("ativa");
 }
 
 function desativarBotaoSelecionado() {
     const botaoSelecionado = document.querySelector(".selecionado");
-    botaoSelecionado.classList.remove("selecionado");
+    if (botaoSelecionado) botaoSelecionado.classList.remove("selecionado");
 }
+
