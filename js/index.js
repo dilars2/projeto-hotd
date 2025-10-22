@@ -36,7 +36,6 @@ function esconderImagemAtiva() {
 }
 
 function desativarBotaoSelecionado() {
-    const botaoSelecionado = document.querySelector(".selecionado");
+    const botaoSelecionado = document.querySelector(".botao.selecionado");
     if (botaoSelecionado) botaoSelecionado.classList.remove("selecionado");
 }
-
